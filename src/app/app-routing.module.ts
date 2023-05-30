@@ -3,13 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
-import { gAuthGuard } from './guard/g-auth.guard';
+import { GAuthGuard } from './guard/g-auth.guard';
 
 const routes: Routes = [
   { path:'', component:HomeComponent, pathMatch:'full'},
   { path:'home', component:HomeComponent},
-  { path:'admin', component:AdminComponent, canActivate:[gAuthGuard]},
+  { path:'admin', component:AdminComponent, canActivate:[GAuthGuard]},
   { path:'login', component:LoginComponent},
+  { path:'products', loadChildren: () => import('./products/products.module').then(m => m.ProductsModule) },
 ];
 
 @NgModule({
