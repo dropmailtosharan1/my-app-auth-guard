@@ -7,6 +7,8 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+// import { NgxPaginationModule } from 'ngx-pagination';
+// Becoming some error with NgxPaginationModule
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    // NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

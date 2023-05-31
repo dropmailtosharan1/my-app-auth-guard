@@ -1,1 +1,21 @@
-<p>products works!</p>
+
+<h1>Departments of the Products</h1>
+<li *ngFor="let dept of departments">
+   <b>{{dept}}</b> 
+</li>
+<br> <hr>
+<li *ngFor="let employee of employees">
+    <b>{{employee.name}}</b> &nbsp;
+    <b>{{employee.employeeID}}</b>  &nbsp;
+    <b>{{employee.department}}</b>  &nbsp;
+</li>
+
+ <h3>Random Number Generation type-1</h3>
+<div>
+    <h3>Random Number : {{generateRandomNumber}}</h3>
+</div>
+<h2>Generate Random Numbers type-2</h2>
+<ul>
+    <p *ngFor="let number of rNum">{{ number }}</p>
+  </ul>
+  

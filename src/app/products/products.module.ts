@@ -5,7 +5,6 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './products.component';
 import { HomeComponent } from '../home/home.component';
 
-
 @NgModule({
   declarations: [
     ProductsComponent,
