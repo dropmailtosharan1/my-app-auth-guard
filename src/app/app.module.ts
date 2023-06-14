@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 // import { NgxPaginationModule } from 'ngx-pagination';
 // Becoming some error with NgxPaginationModule
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    // NgxPaginationModule
+    // NgxPaginationModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

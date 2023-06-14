@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -31,31 +32,45 @@ export class ProductsComponent {
     },
   ];
   //  Another type of generate random numbers
-  generateRandomNumber:number;
+  generateRandomNumber: number;
+  url = 'https://jsonplaceholder.typicode.com/todos';
+  todos:JSP[]=[];
 
-  constructor( ){
-    this.generateRandomNumber=this.gRandomNumber(1,999)
+  constructor(private http: HttpClient) {
+    this.generateRandomNumber = this.gRandomNumber(1, 999);
   }
-  gRandomNumber(min:number, max:number): number{
-    return Math.floor(Math.random() * (max-min +1)) + min;
+  gRandomNumber(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   genRandomNumbers(): number[] {
     const randomNumbers: number[] = [];
     const numberOfRandomNumbers = 10; // Change this to the desired number of random numbers
-  
+
     for (let i = 0; i < numberOfRandomNumbers; i++) {
       const randomNumber = Math.random();
       randomNumbers.push(randomNumber);
     }
-  
+
     return randomNumbers;
   }
-  
+
   rNum: number[] = [];
 
   ngOnInit() {
     this.rNum = this.genRandomNumbers();
+    this.http.get<JSP[]>(this.url).subscribe
+    
+    (result=> this.todos=result);
+    //   ((data) => {
+    //   console.log(data);
+    // });
   }
-  
+}
+
+interface JSP {
+  userId: string;
+  id: string;
+  title: string;
+  completed: boolean;
 }

@@ -9,7 +9,13 @@
     <b>{{employee.employeeID}}</b>  &nbsp;
     <b>{{employee.department}}</b>  &nbsp;
 </li>
-
+<div class="products">
+    <h2>Products List</h2>
+    <div id="display" *ngFor="let todo of   todos">
+        <div>User ID: {{todo.userId}} --- Id: {{todo.id}}</div>
+        <div>Title: {{todo.title}}</div>
+    </div>
+</div>
  <h3>Random Number Generation type-1</h3>
 <div>
     <h3>Random Number : {{generateRandomNumber}}</h3>
