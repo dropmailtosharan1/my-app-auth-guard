@@ -1,0 +1,75 @@
+<h1>Calculator App </h1>
+
+<div class="calculator">
+    <input type="text" id="result" [(ngModel)]="result" readonly>
+    
+    <div class="buttons">
+      <div class="row">
+        <button (click)="clear()">C</button>
+        <button (click)="backspace()"><</button>
+        <button (click)="appendNumber(7)">7</button>
+        <button (click)="appendNumber(8)">8</button>
+        <button (click)="appendNumber(9)">9</button>
+        <button (click)="appendOperator('/')">/</button>
+      </div>
+      <div class="row">
+        <button (click)="appendNumber(4)">4</button>
+        <button (click)="appendNumber(5)">5</button>
+        <button (click)="appendNumber(6)">6</button>
+        <button (click)="appendOperator('*')">*</button>
+      </div>
+      <div class="row">
+        <button (click)="appendNumber(1)">1</button>
+        <button (click)="appendNumber(2)">2</button>
+        <button (click)="appendNumber(3)">3</button>
+        <button (click)="appendOperator('-')">-</button>
+      </div>
+      <div class="row">
+        <button (click)="appendNumber(0)">0</button>
+        <button (click)="appendDecimal()">.</button>
+        <button (click)="calculate()">=</button>
+        <button (click)="appendOperator('+')">+</button>
+      </div>
+    </div>
+  </div>
+  
+<br>
+<div>
+    <h2 #title>
+        <ng-content></ng-content>
+    </h2>
+    <div>
+        Enter value 1: <input #v1 type="number"/>
+        Enter value 2: <input #v2 type="number"/>
+    <p *ngIf="result">{{result}}</p>
+    </div>
+    
+    <div>
+        <button (click)="add(v1.value, v2.value)">Add</button>
+        <button (click)="substract(v1.value, v2.value)">Substract</button>
+    </div>
+</div>
+<br>
+<div>
+    <h1>Calculator</h1>
+
+<div>
+  <label for="num1">Number 1:</label>
+  <input type="text" id="num1" [(ngModel)]="number1">
+</div>
+
+<div>
+  <label for="num2">Number 2:</label>
+  <input type="text" id="num2" [(ngModel)]="number2">
+</div>
+
+<div>
+  <button (click)="addNumber()">Add</button>
+  <button (click)="subtractNumber()">Subtract</button>
+</div>
+
+<div *ngIf="result !== null">
+  <p>Result: {{ result }}</p>
+</div>
+
+</div>

@@ -13,7 +13,7 @@ export class ProductsComponent {
     'Hybrid Bicycles',
     'Bicycle Pumps',
   ];
-
+  rNum: number[] = [];
   employees = [
     {
       name: 'Sharan',
@@ -29,13 +29,14 @@ export class ProductsComponent {
       name: 'Reddy',
       employeeID: 103,
       department: 'Civil',
-    },
+    }
   ];
+
   //  Another type of generate random numbers
   generateRandomNumber: number;
   url = 'https://jsonplaceholder.typicode.com/todos';
-  todos:JSP[]=[];
-
+  todos: JSP[] = [];
+  
   constructor(private http: HttpClient) {
     this.generateRandomNumber = this.gRandomNumber(1, 999);
   }
@@ -43,25 +44,20 @@ export class ProductsComponent {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
+//  Generate a Random number
   genRandomNumbers(): number[] {
     const randomNumbers: number[] = [];
     const numberOfRandomNumbers = 10; // Change this to the desired number of random numbers
-
     for (let i = 0; i < numberOfRandomNumbers; i++) {
       const randomNumber = Math.random();
       randomNumbers.push(randomNumber);
     }
-
     return randomNumbers;
   }
 
-  rNum: number[] = [];
-
   ngOnInit() {
     this.rNum = this.genRandomNumbers();
-    this.http.get<JSP[]>(this.url).subscribe
-    
-    (result=> this.todos=result);
+    this.http.get<JSP[]>(this.url).subscribe((result) => (this.todos = result));
     //   ((data) => {
     //   console.log(data);
     // });

@@ -11,7 +11,8 @@ export class HomeComponent {
   customerName='Sharan';
   email:any;
   password:any;
-  constructor() {}
+  
+  ngOnInit(): void { }
 
   onSubmit(form:NgForm){
     console.log(form.value);
